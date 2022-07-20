@@ -2,9 +2,12 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      <h2>about page</h2>
-    </div>
+    <section className='section about-section'>
+      <h1 className='section-title'>about this page</h1>
+      <p>
+        This is a React app using "TheCocktailDB" API created to practice my FrontEnd skills
+      </p>
+    </section>
   )
 }
 

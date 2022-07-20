@@ -5,7 +5,7 @@ Variables
 */
 :root {
   --primaryLightColor: #d4e6a5;
-  --primaryColor: #476a2e;
+  --primaryColor: #ec00f5;
   --primaryDarkColor: #c02c03;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
@@ -111,6 +111,7 @@ Buttons
 .btn-primary:hover {
   background: var(--primaryLightColor);
   color: var(--primaryColor);
+  scale: 110%;
 }
 .btn-block {
   width: 100%;
@@ -125,6 +126,7 @@ Buttons
 .btn-details:hover {
   background: var(--primaryLightColor);
   border-color: var(--primaryLightColor);
+  scale: 110%;
 }
 /* 
 ====== 
@@ -177,6 +179,8 @@ About
   width: var(--smallWidth);
   max-width: var(--maxWidth);
   margin: 0 auto;
+  text-decoration: underline pink;
+  font: bold;
 }
 .about-section p {
   line-height: 2rem;
