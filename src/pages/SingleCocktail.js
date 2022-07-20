@@ -5,7 +5,7 @@ const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
 const SingleCocktail = () => {
   const {id}= useParams();
-  const [Loading,setLoading] = React.useState(false);
+  const [loading,setLoading] = React.useState(false);
   const [cocktail,setCocktail] = React.useState(null);
   
   React.useEffect(()=>{
