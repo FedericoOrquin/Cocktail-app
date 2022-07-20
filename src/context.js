@@ -11,11 +11,10 @@ const AppProvider = ({ children }) => {
   const [cocktails,setCocktails]=useState([]);
 
   const fetchDrinks =useCallback(async () =>{
-  //since we are using this fuction multiple times we have to set loading to true
     setLoading(true);
     try {
       const response=await fetch(`${url}${searchTerm}`)
-      const data= await response.json();
+      const data= await response.json()
       const {drinks}=data;
       if(drinks){
         const newCocktails=drinks.map((item)=>{
@@ -25,20 +24,18 @@ const AppProvider = ({ children }) => {
             strDrinkThumb,
             strAlcoholic,
             strGlass,
-            strInstructions,
           } = item;
+
           return {
             id: idDrink,
             name: strDrink,
             image: strDrinkThumb,
             info: strAlcoholic,
             glass: strGlass,
-            instructions: strInstructions,
           }
         })
         setCocktails(newCocktails)
-      }
-      else{
+      }else{
         setCocktails([])
       }
       setLoading(false)
@@ -48,13 +45,13 @@ const AppProvider = ({ children }) => {
     }
   },[searchTerm])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchDrinks();
-  },[searchTerm])
+  },[searchTerm,fetchDrinks])
 
   return (
-  <AppContext.Provider value={{
-    loading,searchTerm,cocktails,setSearchTerm,}}>
+  <AppContext.Provider 
+    value={{loading,searchTerm,cocktails,setSearchTerm,}}>
     
     {children}
 
